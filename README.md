@@ -25,3 +25,21 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+
+
+## Progress & resources
+https://angular.io/docs/ts/latest/tutorial/toh-pt1.html - hero tutorial 
+    Step 3: https://angular.io/docs/ts/latest/tutorial/toh-pt3.html
+    Done: https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
+    Next: https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
+        (Done till "Navigate to Hero Details")
+http://bodiddlie.github.io/ng-2-toh-with-ngrx-suite/ - moving to NGrX
+
+
+
+## resources
+https://angular.io/docs/ts/latest/cli-quickstart.html -- CLI
