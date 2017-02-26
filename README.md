@@ -35,8 +35,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://angular.io/docs/ts/latest/tutorial/toh-pt1.html - hero tutorial 
     Step 3: https://angular.io/docs/ts/latest/tutorial/toh-pt3.html
     Done: https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-    Next: https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
-        (Done till "Navigate to Hero Details")
+    Done: https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
+    Next: https://angular.io/docs/ts/latest/tutorial/toh-pt6.html   
 http://bodiddlie.github.io/ng-2-toh-with-ngrx-suite/ - moving to NGrX
 
 
