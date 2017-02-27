@@ -1,0 +1,37 @@
+{
+  "version": "1.0.2",
+  "scenarios": [
+    {
+      "id": "48355b25-6d3b-44ca-afcb-1a194b4c7e2d",
+      "name": "Heroes service",
+      "active": true,
+      "mockedRequests": [
+        {
+          "id": "5916a8df-d490-4d9f-8aa2-438e21c79403",
+          "active": false,
+          "method": "GET",
+          "url": "http://fakedomain/api/heroes",
+          "headers": {},
+          "response": {
+            "delay": 0,
+            "status": 200,
+            "body": [
+              {
+                "id": 11,
+                "name": "Mr. Nice"
+              },
+              {
+                "id": 12,
+                "name": "Shimo"
+              },
+              {
+                "id": 13,
+                "name": "Yosef"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
