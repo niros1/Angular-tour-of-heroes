@@ -37,6 +37,7 @@ https://angular.io/docs/ts/latest/tutorial/toh-pt1.html - hero tutorial
     Done: https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
     Done: https://angular.io/docs/ts/latest/tutorial/toh-pt5.html
     Next: https://angular.io/docs/ts/latest/tutorial/toh-pt6.html   
+    Next: https://angular.io/docs/ts/latest/guide/server-communication.html
 http://bodiddlie.github.io/ng-2-toh-with-ngrx-suite/ - moving to NGrX
 
 

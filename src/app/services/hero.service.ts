@@ -1,7 +1,7 @@
 import { Injectable,Inject } from '@angular/core';
 import { HEROES } from './mock-heroes'; 
 import {Hero} from '../hero'; 
-import {Http, Response} from '@angular/http';
+import {Http, Response, Headers} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -9,15 +9,11 @@ import 'rxjs/add/operator/toPromise';
 export class HeroService {
 
   private heroesUrl = 'http://fakedomain/api/heroes';  // URL to web api
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(  private http: Http) { }
 
-  getHeroes(): Promise<Hero[]> {
-    //return Promise.resolve(HEROES);
-    return this.http.get(this.heroesUrl).toPromise()
-    .then(this.handleResponse)
-    .catch(this.handleError);
-  }
+  
 
   private handleResponse(response : Response) : Promise<Hero[]>{
     console.log(response);
@@ -28,8 +24,42 @@ export class HeroService {
     return Promise.reject(error.message || error);
   }
   
+  update(hero:Hero):Promise<Hero[]> {
+    const url = `${this.heroesUrl}/${hero.id}`;
+    return this.http
+    .put(url, JSON.stringify(hero), {headers: this.headers})
+    .toPromise()
+    .then(() => hero)
+    .catch(this.handleError);
+  }
+  
+  getHeroes(): Promise<Hero[]> {
+    //return Promise.resolve(HEROES);
+    return this.http.get(this.heroesUrl).toPromise()
+    .then(this.handleResponse)
+    .catch(this.handleError);
+  }
+
   getHero(id:number) : Promise<Hero>{
-    return this.getHeroes()
-             .then(heroes => heroes.find(hero => hero.id === id));
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get(url).toPromise()
+    .then(response => Promise.resolve(response.json()))
+    .catch(this.handleError);
+  }
+
+  create(name: string): Promise<Hero> {
+    return this.http
+      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }  
+
+  delete(id: number): Promise<void> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
   }
 }
