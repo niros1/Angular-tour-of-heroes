@@ -8,11 +8,12 @@ import 'mimic';
 
 
 import { AppComponent } from './app.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
+import { HeroesComponent } from './Components/heroes/heroes.component';
 import {HeroService} from './services/hero.service';
+import {ObsrvHeroService} from './services/obsrvHero/obsrv-hero.service';
 //import { RouterModule }   from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AppRoutingModule }     from './app-routing/app-routing.module';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
@@ -31,7 +32,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     AppRoutingModule
     
   ],
-  providers: [HeroService],
+  providers: [HeroService,ObsrvHeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

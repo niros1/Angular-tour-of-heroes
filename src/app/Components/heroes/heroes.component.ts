@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
-import {Hero} from '../hero';
+import {Hero} from '../../hero';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
-import {HeroService} from '../services/hero.service'
+import {HeroService} from '../../services/hero.service'
 import {Router } from '@angular/router';
 
 @Component({
