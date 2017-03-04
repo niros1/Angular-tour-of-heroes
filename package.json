@@ -25,6 +25,7 @@
     "@ngrx/store": "^2.2.1",
     "@ngrx/store-devtools": "^3.2.3",
     "core-js": "^2.4.1",
+    "lodash": "^4.17.4",
     "mimic": "^1.2.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"

@@ -1,8 +1,10 @@
-//app/reducers/hero-list.ts
-//imports snipped for brevity
+import { HeroActions } from './../RDX_Actions/hero';
+
 import {Hero} from '../hero';
-import {HeroActions} from '../RDX-Actions/hero'
 import {Action} from '@ngrx/store';
+//import * as _ from 'lodash';
+
+
 
 export type HeroListState = Hero[];
 
@@ -17,17 +19,17 @@ export default function (state = initialState, action: Action): HeroListState {
         case HeroActions.ADD_HERO_SUCCESS: {
             return [...state, action.payload];
         }
-        case HeroActions.SAVE_HERO_SUCCESS: {
-            let index = _.findIndex(state, {id: action.payload.id});
-            if (index >= 0) {
-                return [
-                    ...state.slice(0, index),
-                    action.payload,
-                    ...state.slice(index + 1)
-                ];
-            }
-            return state;
-        }
+        // case HeroActions.SAVE_HERO_SUCCESS: {
+        //     let index = _.findIndex(state, {id: action.payload.id});
+        //     if (index >= 0) {
+        //         return [
+        //             ...state.slice(0, index),
+        //             action.payload,
+        //             ...state.slice(index + 1)
+        //         ];
+        //     }
+        //     return state;
+        // }
         case HeroActions.DELETE_HERO_SUCCESS: {
             return state.filter(hero => {
                 return hero.id !== action.payload.id;
