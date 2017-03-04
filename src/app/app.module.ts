@@ -30,6 +30,7 @@ import { RdxHeroDetailComponent } from './components/rdx-hero-detail/rdx-hero-de
 import { RdxHeroFormComponent } from './components/rdx-hero-form/rdx-hero-form.component';
 import { RdxHeroListComponent } from './components/rdx-hero-list/rdx-hero-list.component';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,10 @@ import { RdxHeroListComponent } from './components/rdx-hero-list/rdx-hero-list.c
     HttpModule,
     AppRoutingModule,
     StoreModule.provideStore(reducer),
-    EffectsModule.run(HeroEffects)
+    EffectsModule.run(HeroEffects),
+    StoreDevtoolsModule.instrumentOnlyWithExtension({
+      maxAge: 5
+    })
     
   ],
   providers: [HeroService,ObsrvHeroService, HeroActions],
