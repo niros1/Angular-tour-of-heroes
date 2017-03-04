@@ -13,6 +13,7 @@ export class ObsrvHeroService {
     constructor(private http: Http) {}
 
     getHeroes(): Observable<Hero[]> {
+        console.log("ObsrvHeroService getHeroes called!!!");
         return this.http.get(this.heroesUrl)
         .map(res => res.json());
     }

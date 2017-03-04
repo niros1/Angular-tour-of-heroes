@@ -1,3 +1,4 @@
+import { ObsrvHeroService } from './../services/obsrvHero/obsrv-hero.service';
 import { Action } from '@ngrx/store';
 import { HeroService } from './../services/hero.service';
 import { HeroActions } from './../RDX_Actions/hero';
@@ -12,7 +13,7 @@ export class HeroEffects {
         
         private update$: Actions,
         private heroActions: HeroActions,
-        private svc: HeroService
+        private svc: ObsrvHeroService
     ) {}
     
 

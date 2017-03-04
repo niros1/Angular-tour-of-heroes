@@ -22,6 +22,7 @@ export class RdxHeroesComponent implements OnInit {
         private router: Router
     ) {
         this.heroes = store.select('heroes');
+        console.log("store look like that" + this.heroes);
     }
 
      ngOnInit() {}
