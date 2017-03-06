@@ -46,6 +46,7 @@ export class RdxHeroesComponent implements OnInit {
     }
 
     gotoDetail() {
+        
         this.router.navigateByUrl('/detail/' + this.selectedHero.id);
     }
 
