@@ -1,13 +1,13 @@
+import { IHeroService } from './IHero.service';
 import { Injectable,Inject } from '@angular/core';
 import { HEROES } from './mock-heroes'; 
 import {Hero} from '../hero'; 
 import {Http, Response, Headers} from '@angular/http';
-import {IHeroService}  from './IHero.service';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class HeroServiceIml implements IHeroService{
+export class FakeHeroService implements IHeroService {
 
   private heroesUrl = 'http://fakedomain/api/heroes';  // URL to web api
   private headers = new Headers({'Content-Type': 'application/json'});

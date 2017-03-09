@@ -1,6 +1,6 @@
 import { ObsrvHeroService } from './../services/obsrvHero/obsrv-hero.service';
 import { Action } from '@ngrx/store';
-import { HeroService } from './../services/hero.service';
+//import { HeroService } from './../services/hero.service';
 import { HeroActions } from './../RDX_Actions/hero';
 import { Injectable } from '@angular/core';
 import {Effect, Actions} from '@ngrx/effects';

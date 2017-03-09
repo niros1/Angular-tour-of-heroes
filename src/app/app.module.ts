@@ -1,8 +1,10 @@
+import { heroServiceProvider } from './services/hero.service.provider';
+
 import { HeroActions } from './RDX_Actions/hero';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import 'mimic';
 
 // Imports for loading & configuring the in-memory web api
@@ -11,11 +13,11 @@ import 'mimic';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './Components/heroes/heroes.component';
-import {HeroService} from './services/hero.service';
+//import {HeroService} from './services/hero.service';
 import {ObsrvHeroService} from './services/obsrvHero/obsrv-hero.service';
-//import { RouterModule }   from '@angular/router';
+// import { RouterModule }   from '@angular/router';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { AppRoutingModule }     from './app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import {EffectsModule} from '@ngrx/effects';
 
@@ -24,6 +26,12 @@ import reducer from './RDX_Reducers';
 import {HeroEffects} from './RDX_Effects/hero';
 
 import { RdxHeroesComponent } from './Components/rdx-heroes/rdx-heroes.component';
+
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+
 
 
 import { RdxHeroDetailComponent } from './components/rdx-hero-detail/rdx-hero-detail.component';
@@ -48,16 +56,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     FormsModule,
     HttpModule,
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     StoreModule.provideStore(reducer),
     EffectsModule.run(HeroEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
     })
-    
   ],
-  providers: [HeroService,ObsrvHeroService, HeroActions],
+  //providers: [{ provide: HeroService, useClass: HeroService }, ObsrvHeroService, HeroActions],
+  providers: [heroServiceProvider, ObsrvHeroService, HeroActions],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
 

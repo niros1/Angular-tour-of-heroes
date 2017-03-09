@@ -22,7 +22,7 @@ export class RdxHeroesComponent implements OnInit {
         private router: Router
     ) {
         this.heroes = store.select('heroes');
-        console.log("store look like that" + this.heroes);
+        console.log('store look like that' + this.heroes);
     }
 
      ngOnInit() {}
@@ -46,7 +46,7 @@ export class RdxHeroesComponent implements OnInit {
     }
 
     gotoDetail() {
-        
+
         this.router.navigateByUrl('/detail/' + this.selectedHero.id);
     }
 

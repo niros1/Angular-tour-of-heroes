@@ -4,6 +4,7 @@ import {Action} from '@ngrx/store';
 
 export type HeroState = Hero;
 
+
 const initialState: HeroState = {
     id: 0,
     name: ''

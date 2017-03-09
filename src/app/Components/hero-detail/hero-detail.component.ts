@@ -1,9 +1,10 @@
+import { IHeroService } from './../../services/IHero.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { HeroService } from '../../services/hero.service';
+//import { HeroService } from '../../services/hero.service';
 
 
 import {Hero} from '../../hero'
@@ -20,7 +21,7 @@ export class HeroDetailComponent implements OnInit {
   hero: Hero;
 
   constructor(
-    private heroService: HeroService,
+    private heroService: IHeroService,
     private route: ActivatedRoute,
     private location: Location
   ) { }

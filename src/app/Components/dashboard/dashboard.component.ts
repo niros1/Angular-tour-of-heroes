@@ -1,6 +1,7 @@
+import { IHeroService } from './../../services/IHero.service';
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../../hero';
-import {HeroService} from '../../services/hero.service'
+//import {HeroService} from '../../services/hero.service'
 
 @Component({
   selector: 'niro-dashboard',
@@ -10,13 +11,17 @@ import {HeroService} from '../../services/hero.service'
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
-  constructor(private heroService: HeroService) { 
+  constructor(private heroService: IHeroService) { 
 
   }
 
   ngOnInit() {
     this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(0, 5));
+      .then(this.handleHeroes);
+  }
+
+  private handleHeroes(heroes : any){
+    this.heroes = heroes.slice(0, 5);
   }
 
 
