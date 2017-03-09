@@ -17,8 +17,8 @@ export class FakeHeroService implements IHeroService {
   
 
   private handleResponse(response : Response) : Promise<Hero[]>{
-    console.log(response);
-    return Promise.resolve(response.json());
+    console.log(response.json().data);
+    return Promise.resolve(response.json().data);
   }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
@@ -36,7 +36,7 @@ export class FakeHeroService implements IHeroService {
   
   getHeroes(): Promise<Hero[]> {
     //return Promise.resolve(HEROES);
-    //this.heroesUrl = 'api/heroes';
+    this.heroesUrl = 'api/heroes';
     return this.http.get(this.heroesUrl).toPromise()
     .then(this.handleResponse)
     .catch(this.handleError);

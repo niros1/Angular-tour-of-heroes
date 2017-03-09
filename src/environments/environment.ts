@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  useFakeHttp: false,
+  useFakeHttp: true,
 };
