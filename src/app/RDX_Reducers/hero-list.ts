@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HeroActions } from './../RDX_Actions/hero';
 
 import {Hero} from '../hero';
@@ -14,7 +15,12 @@ const initialState: HeroListState = [];
 export default function (state = initialState, action: Action): HeroListState {
     switch (action.type) {
         case HeroActions.LOAD_HEROES_SUCCESS: {
-            return action.payload;
+            if(environment.useFakeHttp)
+                return action.payload.data;
+                
+            else
+                return action.payload;
+            //return action.payload;
         }
         case HeroActions.ADD_HERO_SUCCESS: {
             return [...state, action.payload];

@@ -20,8 +20,10 @@ export class HeroEffects {
     @Effect() loadHeroes$ = this.update$
         .ofType(HeroActions.LOAD_HEROES)
         .switchMap(() => this.svc.getHeroes())
-        .map(heroes => this.heroActions.loadHeroesSuccess(heroes));
-    
+        //.map(x => {console.log('observer is :' + JSON.stringify(x)); return x; })
+        .map(heroes => this.heroActions.loadHeroesSuccess(heroes))
+        ;
+
 
     @Effect() getHero$ = this.update$
         .ofType(HeroActions.GET_HERO)

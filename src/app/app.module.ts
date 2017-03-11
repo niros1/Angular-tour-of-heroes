@@ -40,7 +40,6 @@ import { RdxHeroFormComponent } from './components/rdx-hero-form/rdx-hero-form.c
 import { RdxHeroListComponent } from './components/rdx-hero-list/rdx-hero-list.component';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-const x = "dd";
 
 @NgModule({
   declarations: [
@@ -58,7 +57,7 @@ const x = "dd";
     BrowserModule,
     FormsModule,
     HttpModule,
-    environment.useFakeHttp === true ? InMemoryWebApiModule.forRoot(InMemoryDataService) : null ,
+    environment.useFakeHttp === true ? InMemoryWebApiModule.forRoot(InMemoryDataService) : HttpModule ,
     AppRoutingModule,
     StoreModule.provideStore(reducer),
     EffectsModule.run(HeroEffects),

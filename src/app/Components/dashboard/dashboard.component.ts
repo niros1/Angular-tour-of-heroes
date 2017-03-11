@@ -17,11 +17,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.heroService.getHeroes()
-      .then(this.handleHeroes);
+      .then(this.handleHeroes.bind(this));
   }
 
   private handleHeroes(heroes : any){
-    this.heroes = heroes.slice(0, 5);
+    let heroes1: Hero[] = [];
+    heroes1 = heroes.slice(0, 5);
+    this.heroes = heroes1;
+    console.log('NOT THAT ONE');
   }
 
 
