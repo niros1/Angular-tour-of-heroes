@@ -44,7 +44,9 @@ export class HeroSearchComponent implements OnInit {
         // TODO: add real error handling
         console.log(error);
         return Observable.of<Hero[]>([]);
-      });
+      })
+      .map(x => {console.log('XXX is  :' + JSON.stringify(x)); return x; })
+
   }
   gotoDetail(hero: Hero): void {
     let link = ['/detail', hero.id];

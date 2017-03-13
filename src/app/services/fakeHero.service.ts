@@ -9,7 +9,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class FakeHeroService implements IHeroService {
 
-  private heroesUrl = 'http://fakedomain/api/heroes';  // URL to web api
+  //private heroesUrl = 'http://fakedomain/api/heroes';  // URL to web api
+  private heroesUrl = 'api/heroes';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(  private http: Http) { }
@@ -36,7 +37,7 @@ export class FakeHeroService implements IHeroService {
   
   getHeroes(): Promise<Hero[]> {
     //return Promise.resolve(HEROES);
-    this.heroesUrl = 'api/heroes';
+    //this.heroesUrl = 'api/heroes';
     return this.http.get(this.heroesUrl).toPromise()
     .then(this.handleResponse)
     .catch(this.handleError);
