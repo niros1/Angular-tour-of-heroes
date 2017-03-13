@@ -36,7 +36,7 @@ export class ObsrvHeroService {
     }
 
     deleteHero(hero : Hero) {
-        
+
         const url = `${this.heroesUrl}/${hero.id}`;
         return this.http.delete(url).
         map(res => hero);

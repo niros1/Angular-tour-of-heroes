@@ -73,4 +73,5 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 export class AppModule { }
+let x = 5;
 

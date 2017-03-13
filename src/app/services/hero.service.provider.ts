@@ -4,19 +4,16 @@ import { HeroServiceIml } from './hero.service';
 import { FakeHeroService } from './fakeHero.service';
 import { IHeroService } from './IHero.service';
 
-let heroServiceFactory = (http:Http) => {
-  if(environment.useFakeHttp){
-      return new FakeHeroService(http) as IHeroService;
-  }
-  else{
-      return new HeroServiceIml(http) as IHeroService;
-  }
+let heroServiceFactory = getService;
+
+function getService(http:Http) : IHeroService {
+  
+  return environment.useFakeHttp ? new FakeHeroService(http) : new HeroServiceIml(http);
 };
 
 
 
-export let heroServiceProvider =
-  { 
+export let heroServiceProvider = {
     provide: IHeroService,
     useFactory: heroServiceFactory,
     deps: [Http]
