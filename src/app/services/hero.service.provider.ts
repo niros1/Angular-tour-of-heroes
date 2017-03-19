@@ -4,9 +4,9 @@ import { HeroServiceIml } from './hero.service';
 import { FakeHeroService } from './fakeHero.service';
 import { IHeroService } from './IHero.service';
 
-let heroServiceFactory = getService;
+export let heroServiceFactory = getService;
 
-function getService(http:Http) : IHeroService {
+export function getService(http:Http) : IHeroService {
   
   return environment.useFakeHttp ? new FakeHeroService(http) : new HeroServiceIml(http);
 };
